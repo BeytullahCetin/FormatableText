@@ -14,6 +14,12 @@ namespace FormatableTextNS
         [SerializeField] string replacePrefix = "#";
         [ResizableTextArea][SerializeField] string initialText;
 
+        public void FillTextWith(string textToFill, params string[] parameters)
+        {
+            initialText = textToFill;
+            FillText(parameters);
+        }
+
         public void FillText(params string[] parameters)
         {
             string newText = ObtainNewText(parameters);
